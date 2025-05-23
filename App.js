@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import FeatureItem from './components/featureItem'
 import Badget from './components/badget'
@@ -109,7 +109,7 @@ export default function App() {
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
           {
             playlists && playlists.map((playlist, index) => (
-              <PlaylistItem title={playlist.title} cover={playlist.cover} />
+              <PlaylistItem title={playlist.title} cover={playlist.cover} index={index} />
             ))
           }
         </View>
@@ -119,7 +119,7 @@ export default function App() {
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', padding: 5 }}>
           {
             musicList && musicList.map((music, index) => (
-              <MusicItem title={music.title} artist={music.artist} cover={music.cover} />
+              <MusicItem title={music.title} artist={music.artist} cover={music.cover} index={index}/>
             ))
           }
         </View>
